@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reflex Trainer — Support</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800;900&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #0a0a0a;
+            --surface: #111113;
+            --surface-border: rgba(255, 255, 255, 0.06);
+            --accent: rgb(0, 173, 255);
+            --accent-dim: rgba(0, 173, 255, 0.12);
+            --accent-glow: rgba(0, 173, 255, 0.25);
+            --text: #e8e8ea;
+            --text-muted: rgba(255, 255, 255, 0.5);
+            --text-faint: rgba(255, 255, 255, 0.25);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ── Atmospheric background ── */
+        body::before {
+            content: '';
+            position: fixed;
+            top: -40%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, var(--accent-dim) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .page {
+            position: relative;
+            z-index: 1;
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 80px 24px 60px;
+        }
+
+        /* ── Header / Brand ── */
+        .brand {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .brand-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, var(--accent), rgba(0, 120, 200, 0.9));
+            margin-bottom: 24px;
+            box-shadow: 0 8px 32px var(--accent-glow);
+        }
+
+        .brand-icon svg {
+            width: 26px;
+            height: 26px;
+            fill: white;
+        }
+
+        .brand h1 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 900;
+            font-size: 2.4rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: white;
+            line-height: 1.1;
+        }
+
+        .brand h1 span {
+            color: var(--accent);
+        }
+
+        .brand-rule {
+            width: 40px;
+            height: 3px;
+            background: var(--accent);
+            opacity: 0.6;
+            border: none;
+            border-radius: 2px;
+            margin: 20px auto;
+        }
+
+        .brand p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            max-width: 380px;
+            margin: 0 auto;
+        }
+
+        /* ── Section headings ── */
+        .section-label {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 0.7rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 32px;
+            padding-left: 2px;
+        }
+
+        /* ── FAQ ── */
+        .faq {
+            margin-bottom: 64px;
+        }
+
+        .faq-item {
+            border-top: 1px solid var(--surface-border);
+            padding: 28px 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: 1px solid var(--surface-border);
+        }
+
+        .faq-q {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: white;
+            margin-bottom: 10px;
+            letter-spacing: 0.01em;
+        }
+
+        .faq-a {
+            color: var(--text-muted);
+            font-size: 0.94rem;
+            line-height: 1.75;
+        }
+
+        /* ── Contact card ── */
+        .contact {
+            margin-bottom: 80px;
+        }
+
+        .contact-card {
+            background: var(--surface);
+            border: 1px solid var(--surface-border);
+            border-radius: 16px;
+            padding: 36px 32px;
+            text-align: center;
+        }
+
+        .contact-card p {
+            color: var(--text-muted);
+            font-size: 0.94rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-card a {
+            display: inline-block;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--accent);
+            text-decoration: none;
+            padding: 12px 28px;
+            border: 1px solid rgba(0, 173, 255, 0.3);
+            border-radius: 10px;
+            background: var(--accent-dim);
+            letter-spacing: 0.02em;
+            transition: background 0.2s, border-color 0.2s;
+        }
+
+        .contact-card a:hover {
+            background: rgba(0, 173, 255, 0.2);
+            border-color: rgba(0, 173, 255, 0.5);
+        }
+
+        /* ── Footer ── */
+        footer {
+            text-align: center;
+            padding-top: 32px;
+            border-top: 1px solid var(--surface-border);
+        }
+
+        footer p {
+            color: var(--text-faint);
+            font-size: 0.8rem;
+            letter-spacing: 0.02em;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 480px) {
+            .page {
+                padding: 56px 18px 40px;
+            }
+            .brand h1 {
+                font-size: 1.8rem;
+            }
+            .contact-card {
+                padding: 28px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+
+        <!-- Brand -->
+        <header class="brand">
+            <div class="brand-icon">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            </div>
+            <h1>REFLEX <span>TRAINER</span></h1>
+            <hr class="brand-rule">
+            <p>Measure and improve your reaction speed with real punch detection on Apple Watch.</p>
+        </header>
+
+        <!-- FAQ -->
+        <section class="faq">
+            <div class="section-label">Frequently Asked Questions</div>
+
+            <div class="faq-item">
+                <div class="faq-q">How does punch detection work?</div>
+                <div class="faq-a">Your Apple Watch's accelerometer samples motion at 50 Hz. When you throw a punch, the app detects the rapid acceleration spike and records your reaction time in milliseconds from the moment the visual stimulus appeared on your iPhone.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">Do I need an Apple Watch?</div>
+                <div class="faq-a">No. The app works without one. In Combat Sports mode you can hold the phone in your fist and punch — the iPhone's own motion sensor detects it. General Reaction mode uses a simple screen tap and requires no watch at all.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">What devices are supported?</div>
+                <div class="faq-a">Reflex Trainer requires iOS 17.0 or later. Apple Watch features require watchOS 10.0 or later. Any iPhone and Apple Watch that support these OS versions will work.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">Is my data collected or shared?</div>
+                <div class="faq-a">No. All your reaction data stays on your device. The app does not collect personal information, has no analytics, and does not communicate with any external servers.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">Why does the app show "No Watch"?</div>
+                <div class="faq-a">Make sure your Apple Watch is paired with your iPhone, both devices have the app installed, and the watch app is open. The status will update to "Watch Connected" once communication is established.</div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section class="contact">
+            <div class="section-label">Contact &amp; Support</div>
+            <div class="contact-card">
+                <p>Have a question, found a bug, or want to suggest a feature? Reach out and we'll get back to you.</p>
+                <a href="mailto:maxszolcek@gmail.com">maxszolcek@gmail.com</a>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2025 Reflex Trainer. All rights reserved.</p>
+        </footer>
+
+    </div>
+</body>
+</html>
