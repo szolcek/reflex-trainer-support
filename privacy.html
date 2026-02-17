@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reflex Trainer — Privacy Policy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800;900&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #0a0a0a;
+            --surface: #111113;
+            --surface-border: rgba(255, 255, 255, 0.06);
+            --accent: rgb(0, 173, 255);
+            --accent-dim: rgba(0, 173, 255, 0.12);
+            --accent-glow: rgba(0, 173, 255, 0.25);
+            --text: #e8e8ea;
+            --text-muted: rgba(255, 255, 255, 0.5);
+            --text-faint: rgba(255, 255, 255, 0.25);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: -40%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, var(--accent-dim) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .page {
+            position: relative;
+            z-index: 1;
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 80px 24px 60px;
+        }
+
+        /* ── Header / Brand ── */
+        .brand {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .brand-icon {
+            display: inline-block;
+            width: 72px;
+            height: 72px;
+            border-radius: 16px;
+            margin-bottom: 24px;
+            box-shadow: 0 8px 32px var(--accent-glow);
+            overflow: hidden;
+        }
+
+        .brand-icon img {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .brand h1 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 900;
+            font-size: 2.4rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: white;
+            line-height: 1.1;
+        }
+
+        .brand h1 span {
+            color: var(--accent);
+        }
+
+        .brand-rule {
+            width: 40px;
+            height: 3px;
+            background: var(--accent);
+            opacity: 0.6;
+            border: none;
+            border-radius: 2px;
+            margin: 20px auto;
+        }
+
+        .brand-subtitle {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--text-muted);
+        }
+
+        /* ── Section ── */
+        .section {
+            margin-bottom: 48px;
+        }
+
+        .section-label {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 0.7rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 16px;
+            padding-left: 2px;
+        }
+
+        .section p {
+            color: var(--text-muted);
+            font-size: 0.94rem;
+            line-height: 1.75;
+            margin-bottom: 12px;
+        }
+
+        .section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .section ul {
+            color: var(--text-muted);
+            font-size: 0.94rem;
+            line-height: 1.75;
+            padding-left: 20px;
+            margin-bottom: 12px;
+        }
+
+        .section ul:last-child {
+            margin-bottom: 0;
+        }
+
+        .divider {
+            border: none;
+            border-top: 1px solid var(--surface-border);
+            margin: 48px 0;
+        }
+
+        /* ── Contact card ── */
+        .contact-card {
+            background: var(--surface);
+            border: 1px solid var(--surface-border);
+            border-radius: 16px;
+            padding: 36px 32px;
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .contact-card p {
+            color: var(--text-muted);
+            font-size: 0.94rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-card a {
+            display: inline-block;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--accent);
+            text-decoration: none;
+            padding: 12px 28px;
+            border: 1px solid rgba(0, 173, 255, 0.3);
+            border-radius: 10px;
+            background: var(--accent-dim);
+            letter-spacing: 0.02em;
+            transition: background 0.2s, border-color 0.2s;
+        }
+
+        .contact-card a:hover {
+            background: rgba(0, 173, 255, 0.2);
+            border-color: rgba(0, 173, 255, 0.5);
+        }
+
+        /* ── Footer ── */
+        footer {
+            text-align: center;
+            padding-top: 32px;
+            border-top: 1px solid var(--surface-border);
+        }
+
+        footer p {
+            color: var(--text-faint);
+            font-size: 0.8rem;
+            letter-spacing: 0.02em;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 480px) {
+            .page {
+                padding: 56px 18px 40px;
+            }
+            .brand h1 {
+                font-size: 1.8rem;
+            }
+            .contact-card {
+                padding: 28px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+
+        <!-- Brand -->
+        <header class="brand">
+            <div class="brand-icon">
+                <img src="icon.png" alt="Reflex Trainer app icon">
+            </div>
+            <h1>REFLEX <span>TRAINER</span></h1>
+            <hr class="brand-rule">
+            <div class="brand-subtitle">Privacy Policy</div>
+        </header>
+
+        <div class="section">
+            <p>Effective date: February 17, 2026</p>
+            <p>Reflex Trainer ("the App") is developed by Max Szolcek. This policy describes how the App handles your information.</p>
+        </div>
+
+        <hr class="divider">
+
+        <div class="section">
+            <div class="section-label">Data Collection</div>
+            <p>Reflex Trainer does not collect, store, or transmit any personal data. The App has no user accounts, no analytics, no tracking, and no advertising.</p>
+        </div>
+
+        <div class="section">
+            <div class="section-label">Sensor Data</div>
+            <p>The App accesses your device's accelerometer (on iPhone and Apple Watch) solely to detect punch motion during reaction tests. This sensor data is processed entirely on your device in real time and is never recorded, stored, or sent anywhere.</p>
+        </div>
+
+        <div class="section">
+            <div class="section-label">Reaction Results</div>
+            <p>Your reaction time measurements exist only in the App's memory during a session. They are not saved to disk, not backed up, and not transmitted to any server.</p>
+        </div>
+
+        <div class="section">
+            <div class="section-label">Device Communication</div>
+            <p>The App uses Apple's WatchConnectivity framework to communicate between your iPhone and Apple Watch. This communication is:</p>
+            <ul>
+                <li>Direct and local between your paired devices</li>
+                <li>Handled entirely by Apple's system frameworks</li>
+                <li>Not routed through any external server</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <div class="section-label">Third-Party Services</div>
+            <p>Reflex Trainer uses no third-party SDKs, APIs, analytics services, or advertising networks. The App makes no network requests.</p>
+        </div>
+
+        <div class="section">
+            <div class="section-label">Children's Privacy</div>
+            <p>The App does not collect any data from anyone, including children. It is safe for users of all ages.</p>
+        </div>
+
+        <div class="section">
+            <div class="section-label">Changes to This Policy</div>
+            <p>If this policy is updated, the revised version will be posted at this URL with an updated effective date.</p>
+        </div>
+
+        <hr class="divider">
+
+        <!-- Contact -->
+        <div class="contact-card">
+            <p>Questions about this privacy policy?</p>
+            <a href="mailto:maxszolcek@gmail.com">maxszolcek@gmail.com</a>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2026 Reflex Trainer. All rights reserved.</p>
+        </footer>
+
+    </div>
+</body>
+</html>
